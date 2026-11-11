@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculadora de IMC</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Calculadora de IMC</h1>
+    <p class="subtitle">Índice de Massa Corporal</p>
+
+    <form id="imc-form" novalidate>
+      <div class="field">
+        <label for="peso">Peso (kg)</label>
+        <input
+          type="number"
+          id="peso"
+          placeholder="Ex: 70"
+          min="1"
+          max="600"
+          step="0.1"
+        />
+        <span class="error" id="erro-peso"></span>
+      </div>
+
+      <div class="field">
+        <label for="altura">Altura (m)</label>
+        <input
+          type="number"
+          id="altura"
+          placeholder="Ex: 1.75"
+          min="0.5"
+          max="3"
+          step="0.01"
+        />
+        <span class="error" id="erro-altura"></span>
+      </div>
+
+      <button type="submit">Calcular IMC</button>
+      <button type="button" id="btn-limpar" class="btn-secondary">Limpar</button>
+    </form>
+
+    <div id="resultado" class="resultado hidden">
+      <div class="imc-valor">
+        <span id="imc-numero"></span>
+        <span class="imc-label">IMC</span>
+      </div>
+      <p id="imc-classificacao"></p>
+      <div class="escala">
+        <div class="escala-item muito-baixo">
+          <span class="faixa">&lt; 18,5</span>
+          <span>Abaixo do peso</span>
+        </div>
+        <div class="escala-item normal">
+          <span class="faixa">18,5 – 24,9</span>
+          <span>Peso normal</span>
+        </div>
+        <div class="escala-item sobrepeso">
+          <span class="faixa">25 – 29,9</span>
+          <span>Sobrepeso</span>
+        </div>
+        <div class="escala-item obesidade-1">
+          <span class="faixa">30 – 34,9</span>
+          <span>Obesidade grau I</span>
+        </div>
+        <div class="escala-item obesidade-2">
+          <span class="faixa">35 – 39,9</span>
+          <span>Obesidade grau II</span>
+        </div>
+        <div class="escala-item obesidade-3">
+          <span class="faixa">≥ 40</span>
+          <span>Obesidade grau III</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
